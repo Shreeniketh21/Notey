@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/menu_add_note"
+            android:title="Add Note"
+            android:icon="@drawable/ic_add_outline"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="100"/>
+
+        <item
+            android:id="@+id/menu_add_image"
+            android:title="Add Image"
+            android:icon="@drawable/ic_image"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="200"/>
+
+        <item
+            android:id="@+id/menu_add_voice"
+            android:title="Add Voice Note"
+            android:icon="@drawable/ic_voice"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="300"/>
+
+        <item
+            android:id="@+id/menu_add_url"
+            android:title="Add URL"
+            android:icon="@drawable/ic_web_link"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="400"/>
+
+
+        <item
+            android:id="@+id/menu_app_info"
+            android:icon="@drawable/ic_info"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="600"
+            android:title="App Info" />
+
+        <item
+            android:id="@+id/menu_terms_condition"
+            android:icon="@drawable/terms_condition"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="600"
+            android:title="Terms and Conditions" />
+
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/baseline_logout_24"
+            android:iconTint="@color/colorPrimaryDark"
+            android:orderInCategory="600"
+            android:title="Logout" />
+
+
+
+
+
+    </group>
+
+</menu>
