@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey;
+package com.shreeniketh.notey;
 
 import android.content.Context;
 

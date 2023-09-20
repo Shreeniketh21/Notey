@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey.Account;
+package com.shreeniketh.notey.Account;
 
 import android.content.Context;
 import android.widget.Toast;

@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey;
+package com.shreeniketh.notey;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,14 +33,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
-import com.shreenikethneyaz.notey.Account.Utility;
-import com.shreenikethneyaz.notey.database.NotesDatabase;
-import com.shreenikethneyaz.notey.entities.Note;
+import com.shreeniketh.notey.Account.Utility;
+import com.shreeniketh.notey.database.NotesDatabase;
+import com.shreeniketh.notey.entities.Note;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.shreenikethneyaz.notey.R;
 import com.tapadoo.alerter.Alerter;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;

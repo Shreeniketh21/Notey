@@ -1,8 +1,8 @@
-package com.shreenikethneyaz.notey.listeners;
+package com.shreeniketh.notey.listeners;
 
 import android.view.View;
 
-import com.shreenikethneyaz.notey.entities.Note;
+import com.shreeniketh.notey.entities.Note;
 
 public interface NotesListener {
     void onNoteClicked(View view, Note note, int position);

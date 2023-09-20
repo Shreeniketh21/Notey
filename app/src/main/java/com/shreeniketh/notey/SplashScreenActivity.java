@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey;
+package com.shreeniketh.notey;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.shreenikethneyaz.notey.Account.LoginActivity;
+import com.shreenikethneyaz.notey.R;
 
 import maes.tech.intentanim.CustomIntent;
 
@@ -59,12 +57,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         poweredBy2.setAnimation(bottomAnimation);
 
         new Handler().postDelayed(() -> {
-            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-            if(currentUser==null){
-                startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
-            }else{
                 startActivity(new Intent(SplashScreenActivity.this,MainActivity.class));
-            }
             CustomIntent.customType(SplashScreenActivity.this, "fadein-to-fadeout");
             finish();
         },5000);

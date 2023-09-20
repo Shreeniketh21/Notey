@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey.entities;
+package com.shreeniketh.notey.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

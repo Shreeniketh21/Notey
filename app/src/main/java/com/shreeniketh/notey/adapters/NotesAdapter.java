@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey.adapters;
+package com.shreeniketh.notey.adapters;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -14,10 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.shreenikethneyaz.notey.R;
-import com.shreenikethneyaz.notey.entities.Note;
-import com.shreenikethneyaz.notey.listeners.NotesListener;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.shreeniketh.notey.entities.Note;
+import com.shreeniketh.notey.listeners.NotesListener;
+import com.shreenikethneyaz.notey.R;
 
 import java.util.ArrayList;
 import java.util.List;

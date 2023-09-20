@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey;
+package com.shreeniketh.notey;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -38,16 +38,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.shreenikethneyaz.notey.Account.LoginActivity;
-import com.shreenikethneyaz.notey.adapters.NotesAdapter;
-import com.shreenikethneyaz.notey.database.NotesDatabase;
-import com.shreenikethneyaz.notey.entities.Note;
-import com.shreenikethneyaz.notey.listeners.NotesListener;
+import com.adcolony.sdk.AdColony;
+import com.adcolony.sdk.AdColonyAdOptions;
+import com.adcolony.sdk.AdColonyAdSize;
+import com.adcolony.sdk.AdColonyAdView;
+import com.adcolony.sdk.AdColonyAdViewListener;
+import com.shreeniketh.notey.adapters.NotesAdapter;
+import com.shreeniketh.notey.database.NotesDatabase;
+import com.shreeniketh.notey.entities.Note;
+import com.shreeniketh.notey.listeners.NotesListener;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.shreenikethneyaz.notey.R;
 import com.tapadoo.alerter.Alerter;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
@@ -93,11 +97,27 @@ public class MainActivity extends AppCompatActivity implements NotesListener, Na
 
     private static final float END_SCALE = 0.8f;
 
+    private final String APP_ID = "app48fca5d9d9344ac4b3";
+    private final String BANNER_ZONE_ID ="vz237459276d7c40a8b4";
+    private AdColonyAdOptions adOptions;
+    private AdColonyAdView adView;
+    private ConstraintLayout contentview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AdColony.configure(MainActivity.this,APP_ID,BANNER_ZONE_ID);
+        AdColonyAdViewListener listener = new AdColonyAdViewListener() {
+            @Override
+            public void onRequestFilled(AdColonyAdView adColonyAdView) {
+                contentview=findViewById(R.id.content_view);
+                contentview.addView(adColonyAdView);
+                adView = adColonyAdView;
+            }
+        };
+        AdColony.requestAdView(BANNER_ZONE_ID,listener, AdColonyAdSize.BANNER,adOptions);
 
         getWindow().setNavigationBarColor(ContextCompat.getColor(MainActivity.this, R.color.colorQuickActionsBackground));
 
@@ -238,9 +258,6 @@ public class MainActivity extends AppCompatActivity implements NotesListener, Na
                 break;
             case R.id.menu_terms_condition:
                 termsandcondition();
-            case R.id.menu_logout:
-                logoutofApp();
-                break;
         }
         return false;
     }
@@ -256,14 +273,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener, Na
         startActivity(launchWeb);
     }
 
-    private void logoutofApp() {
-        View logout = findViewById(R.id.menu_logout);
-        logout.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            finish();
-        });
-    }
+
 
     private void animateNavigationDrawer() {
         drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {

@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey.database;
+package com.shreeniketh.notey.database;
 
 import android.content.Context;
 
@@ -6,8 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.shreenikethneyaz.notey.dao.NoteDao;
-import com.shreenikethneyaz.notey.entities.Note;
+import com.shreeniketh.notey.dao.NoteDao;
+import com.shreeniketh.notey.entities.Note;
 
 @Database(entities = Note.class, version = 1, exportSchema = false)
 public abstract class NotesDatabase extends RoomDatabase {

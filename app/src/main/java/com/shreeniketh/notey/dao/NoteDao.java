@@ -1,4 +1,4 @@
-package com.shreenikethneyaz.notey.dao;
+package com.shreeniketh.notey.dao;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.shreenikethneyaz.notey.entities.Note;
+import com.shreeniketh.notey.entities.Note;
 
 import java.util.List;
 
